@@ -1,0 +1,9 @@
+.game-rules {
+    border: 2px solid white;
+    color: white;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    padding: 5px 25px 5px 25px;
+    border-radius: 10px;
+}

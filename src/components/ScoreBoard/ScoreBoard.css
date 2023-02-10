@@ -1,0 +1,34 @@
+.score-board {
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    min-width: 400px;
+}
+
+.rock-paper>p {
+    font-size: 20px;
+}
+
+.score {
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 40px 0px 40px;
+}
+
+.score>p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.score>h1 {
+    font-size: 60px;
+}

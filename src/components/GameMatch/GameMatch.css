@@ -1,0 +1,33 @@
+.gamematch-border {
+    border: 2px solid blue;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.picks {
+    border: 2px solid green;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.picks>h4 {
+    padding-bottom: 30px;
+}
+
+.picks>div {
+    border: 20px solid yellow;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.picks>div>img {
+    width: 100px;
+}
