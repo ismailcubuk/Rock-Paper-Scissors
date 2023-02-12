@@ -1,23 +1,26 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import './GameMatch.css';
-import lizard from '../images/icon-lizard.svg';
-import paper from '../images/icon-paper.svg';
-import rock from '../images/icon-rock.svg';
-import scissors from '../images/icon-scissors.svg';
-import spock from '../images/icon-spock.svg';
+import GameContext from '../GameContext/GameContext';
 function GameMatch() {
+    const { playAgainClick, select, win, computerSelect } = useContext(GameContext)
+
     return (
         <div className='gamematch-border'>
             <div className='picks'>
                 <h4>YOU PICKED</h4>
                 <div>
-                    <img src={lizard} alt="" />
+                    <img src={require(`../images/icon-${select}.svg`)} alt="" />
                 </div>
+            </div>
+            <div className='match'>
+                {win}
+                <button onClick={playAgainClick}>PLAY AGAIN</button>
             </div>
             <div className='picks'>
                 <h4>THE HOUSE PICKED</h4>
                 <div>
-                    <img src={paper} alt="" />
+                    <img src={require(`../images/icon-${computerSelect}.svg`)} alt="" />
+                    {/* <img src={paper} alt="" /> */}
                 </div>
             </div>
         </div>
