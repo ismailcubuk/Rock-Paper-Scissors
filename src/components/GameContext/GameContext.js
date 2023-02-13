@@ -15,25 +15,40 @@ export const GameContextprovider = ({ children }) => {
     const [count, setCount] = useState(0)
     const [computerSelect, setComputerSelect] = useState()
     const [showImage, setShowImage] = useState(false);
-    const [color, setColor] = useState("")
+    const [houseColor, setHouseColor] = useState("")
+    const [myColor, setmyColor] = useState("")
 
     const handleClick = (e) => {
         setShowImage(false)
         setSelect(e.target.id);
         setSPage(false);
     }
+    useEffect(() => {
+        if (select === "lizard") {
+            setmyColor("#834FE3")
+        } else if (select === "paper") {
+            setmyColor("#4865F4")
+        } else if (select === "rock") {
+            setmyColor("#DC2E4E")
+        } else if (select === "scissors") {
+            setmyColor("#EC9E0E")
+        } else {
+            setmyColor("#40B9CE")
+        }
+    }, [select])
+
 
     useEffect(() => {
         if (computerSelect === "lizard") {
-            setColor("#834FE3")
+            setHouseColor("#834FE3")
         } else if (computerSelect === "paper") {
-            setColor("#4865F4")
+            setHouseColor("#4865F4")
         } else if (computerSelect === "rock") {
-            setColor("#DC2E4E")
+            setHouseColor("#DC2E4E")
         } else if (computerSelect === "scissors") {
-            setColor("#EC9E0E")
+            setHouseColor("#EC9E0E")
         } else {
-            setColor("#40B9CE")
+            setHouseColor("#40B9CE")
         }
         setTimeout(() => {
             setShowImage(true);
@@ -93,11 +108,15 @@ export const GameContextprovider = ({ children }) => {
             setCount(count)
         }
     }, [sPage])
-
+    console.log(count);
     const playAgainClick = () => {
+        if (sPage === false) {
+            setComputerSelect(games[Math.floor(Math.random() * 5)].name)
+        }
+        setSelect("")
         setSPage(true)
-        setComputerSelect(games[Math.floor(Math.random() * 5)].name)
     }
+    console.log(computerSelect)
     const games = [
         { id: 1, name: "lizard", game: lizard, color: "#834FE3" },
         { id: 2, name: "paper", game: paper, color: "#4865F4" },
@@ -111,8 +130,9 @@ export const GameContextprovider = ({ children }) => {
     }, [])
 
     const data = {
+        myColor,
         showImage,
-        color,
+        houseColor,
         count,
         computerSelect,
         sPage,
