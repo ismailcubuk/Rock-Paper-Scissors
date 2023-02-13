@@ -15,14 +15,26 @@ export const GameContextprovider = ({ children }) => {
     const [count, setCount] = useState(0)
     const [computerSelect, setComputerSelect] = useState()
     const [showImage, setShowImage] = useState(false);
-
+    const [color, setColor] = useState("")
 
     const handleClick = (e) => {
         setShowImage(false)
         setSelect(e.target.id);
         setSPage(false);
     }
+
     useEffect(() => {
+        if (computerSelect === "lizard") {
+            setColor("#834FE3")
+        } else if (computerSelect === "paper") {
+            setColor("#4865F4")
+        } else if (computerSelect === "rock") {
+            setColor("#DC2E4E")
+        } else if (computerSelect === "scissors") {
+            setColor("#EC9E0E")
+        } else {
+            setColor("#40B9CE")
+        }
         setTimeout(() => {
             setShowImage(true);
         }, 2000);
@@ -85,14 +97,13 @@ export const GameContextprovider = ({ children }) => {
     const playAgainClick = () => {
         setSPage(true)
         setComputerSelect(games[Math.floor(Math.random() * 5)].name)
-
     }
     const games = [
-        { id: 1, name: "lizard", game: lizard },
-        { id: 2, name: "paper", game: paper },
-        { id: 3, name: "rock", game: rock },
-        { id: 4, name: "scissors", game: scissors },
-        { id: 5, name: "spock", game: spock },
+        { id: 1, name: "lizard", game: lizard, color: "#834FE3" },
+        { id: 2, name: "paper", game: paper, color: "#4865F4" },
+        { id: 3, name: "rock", game: rock, color: "#DC2E4E" },
+        { id: 4, name: "scissors", game: scissors, color: "#EC9E0E" },
+        { id: 5, name: "spock", game: spock, color: "#40B9CE" },
     ]
 
     useEffect(() => {
@@ -101,6 +112,7 @@ export const GameContextprovider = ({ children }) => {
 
     const data = {
         showImage,
+        color,
         count,
         computerSelect,
         sPage,
