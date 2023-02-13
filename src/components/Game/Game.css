@@ -11,6 +11,7 @@
 
 .pentagon {
     border: 2px solid red;
+    /* color: #3B4363; */
 }
 
 .lizard-border {
@@ -23,14 +24,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 10px solid purple;
     background-color: white;
+    border: 10px solid #834FE3;
 }
 
 .game-images {
     width: 100%;
     height: 100%;
     padding: 20px;
+    cursor: pointer;
 }
 
 .paper-border {
@@ -43,7 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 10px solid blue;
+    border: 10px solid #4865F4;
     background-color: white;
 }
 
@@ -57,7 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 10px solid red;
+    border: 10px solid #DC2E4E;
     background-color: white;
 }
 
@@ -71,7 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 10px solid yellow;
+    border: 10px solid #EC9E0E;
     background-color: white;
 }
 
@@ -85,6 +87,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 10px solid blue;
+    border: 10px solid #40B9CE;
     background-color: white;
 }

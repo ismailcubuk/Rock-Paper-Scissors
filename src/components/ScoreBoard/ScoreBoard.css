@@ -16,7 +16,6 @@
 .score {
     background-color: white;
     border-radius: 20px;
-    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,8 +26,10 @@
 .score>p {
     font-size: 16px;
     font-weight: 600;
+    color: #2A46C0;
 }
 
 .score>h1 {
     font-size: 60px;
+    color: #3B4363;
 }

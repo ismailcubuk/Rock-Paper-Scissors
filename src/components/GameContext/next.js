@@ -18,6 +18,7 @@ export const GameContextprovider = ({ children }) => {
 
 
     const handleClick = (e) => {
+        setComputerSelect(games[Math.floor(Math.random() * 5)].name)
         setShowImage(false)
         setSelect(e.target.id);
         setSPage(false);
@@ -25,67 +26,48 @@ export const GameContextprovider = ({ children }) => {
     useEffect(() => {
         setTimeout(() => {
             setShowImage(true);
-        }, 2000);
+        }, 1000);
         if (select === "scissors" && computerSelect === "paper") {
             setWin("YOU WİN")
-            setTimeout(() => {
-                setCount(count + 1)
-            }, 2000);
+            setCount(count + 1)
         } else if (select === "paper" && computerSelect === "rock") {
             setWin("YOU WİN")
-            setTimeout(() => {
-                setCount(count + 1)
-            }, 2000);
+            setCount(count + 1)
         } else if (select === "rock" && computerSelect === "lizard") {
             setWin("YOU WİN")
-            setTimeout(() => {
-                setCount(count + 1)
-            }, 2000);
+            setCount(count + 1)
         } else if (select === "lizard" && computerSelect === "spock") {
             setWin("YOU WİN")
-            setTimeout(() => {
-                setCount(count + 1)
-            }, 2000);
+            setCount(count + 1)
         } else if (select === "spock" && computerSelect === "scissors") {
             setWin("YOU WİN")
-            setTimeout(() => {
-                setCount(count + 1)
-            }, 2000);
+            setCount(count + 1)
         } else if (select === "scissors" && computerSelect === "lizard") {
             setWin("YOU WİN")
-            setTimeout(() => {
-                setCount(count + 1)
-            }, 2000);
+            setCount(count + 1)
         } else if (select === "paper" && computerSelect === "spock") {
             setWin("YOU WİN")
-            setTimeout(() => {
-                setCount(count + 1)
-            }, 2000);
+            setCount(count + 1)
         } else if (select === "rock" && computerSelect === "scissors") {
             setWin("YOU WİN")
-            setTimeout(() => {
-                setCount(count + 1)
-            }, 2000);
+            setCount(count + 1)
         } else if (select === "lizard" && computerSelect === "paper") {
             setWin("YOU WİN")
-            setTimeout(() => {
-                setCount(count + 1)
-            }, 2000);
+            setCount(count + 1)
         } else if (select === "spock" && computerSelect === "rock") {
             setWin("YOU WİN")
-            setTimeout(() => {
-                setCount(count + 1)
-            }, 2000);
+            setCount(count + 1)
         } else {
             setWin("YOU LOSE")
             setCount(count)
         }
-    }, [sPage])
+    }, [select])
+
+
 
     const playAgainClick = () => {
         setSPage(true)
         setComputerSelect(games[Math.floor(Math.random() * 5)].name)
-
     }
     const games = [
         { id: 1, name: "lizard", game: lizard },
@@ -95,9 +77,9 @@ export const GameContextprovider = ({ children }) => {
         { id: 5, name: "spock", game: spock },
     ]
 
-    useEffect(() => {
-        setComputerSelect(games[Math.floor(Math.random() * 5)].name)
-    }, [])
+    // useEffect(() => {
+    //     setComputerSelect(games[Math.floor(Math.random() * 5)].name)
+    // }, [])
 
     const data = {
         showImage,

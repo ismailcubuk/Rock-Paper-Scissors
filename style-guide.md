@@ -12,10 +12,20 @@ The designs were created to the following widths:
 ### Primary
 
 - Scissors Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%)
+#EC9E0E
+
 - Paper Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%)
+#4865F4
+
 - Rock Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%)
+#DC2E4E
+
 - Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
+#834FE3
+
 - Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)
+#40B9CE
+
 
 ### Neutral
 

@@ -17,18 +17,18 @@ function Game() {
             <button className='lizard-border' onClick={handleClick}>
                 <img src={lizard} className='game-images' id="lizard" alt="" />
             </button>
-            <div className='paper-border' onClick={handleClick}>
+            <button className='paper-border' onClick={handleClick}>
                 <img src={paper} className='game-images' alt="" id="paper" />
-            </div>
-            <div className='rock-border' onClick={handleClick}>
+            </button>
+            <button className='rock-border' onClick={handleClick}>
                 <img src={rock} className='game-images' alt="" id="rock" />
-            </div>
-            <div className='scissors-border' onClick={handleClick}>
+            </button>
+            <button className='scissors-border' onClick={handleClick}>
                 <img src={scissors} className='game-images' alt="" id="scissors" />
-            </div>
-            <div className='spock-border' onClick={handleClick}>
+            </button>
+            <button className='spock-border' onClick={handleClick}>
                 <img src={spock} className='game-images' alt="" id="spock" />
-            </div>
+            </button>
         </div>
     )
 }
