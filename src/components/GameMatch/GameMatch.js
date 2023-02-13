@@ -8,7 +8,7 @@ function GameMatch() {
         <div className='gamematch-border'>
             <div className='picks'>
                 <h4>YOU PICKED</h4>
-                <div style={{ border: `10px solid ${myColor}` }}>
+                <div style={{ border: `20px solid ${myColor}` }}>
                     <img src={require(`../images/icon-${select}.svg`)} alt="" />
                 </div>
             </div>
@@ -18,7 +18,7 @@ function GameMatch() {
             </div>
             <div className='picks'>
                 <h4>THE HOUSE PICKED</h4>
-                {showImage ? <div style={{ border: `10px solid ${houseColor}` }}>
+                {showImage ? <div style={{ border: `20px solid ${houseColor}` }}>
                     (<img src={require(`../images/icon-${computerSelect}.svg`)} alt="" />)
                 </div> : null}
             </div>

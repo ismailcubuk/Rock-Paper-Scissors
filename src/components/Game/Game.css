@@ -26,13 +26,13 @@
     justify-content: center;
     background-color: white;
     border: 10px solid #834FE3;
+    cursor: pointer;
 }
 
 .game-images {
     width: 100%;
     height: 100%;
     padding: 20px;
-    cursor: pointer;
 }
 
 .paper-border {
@@ -47,6 +47,7 @@
     justify-content: center;
     border: 10px solid #4865F4;
     background-color: white;
+    cursor: pointer;
 }
 
 .rock-border {
@@ -61,6 +62,7 @@
     justify-content: center;
     border: 10px solid #DC2E4E;
     background-color: white;
+    cursor: pointer;
 }
 
 .scissors-border {
@@ -75,6 +77,7 @@
     justify-content: center;
     border: 10px solid #EC9E0E;
     background-color: white;
+    cursor: pointer;
 }
 
 .spock-border {
@@ -89,4 +92,5 @@
     justify-content: center;
     border: 10px solid #40B9CE;
     background-color: white;
+    cursor: pointer;
 }
