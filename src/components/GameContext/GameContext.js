@@ -14,6 +14,7 @@ import trueGame from '../sounds/true.mp3';
 const GameContext = createContext()
 
 export const GameContextprovider = ({ children }) => {
+    const [show, setShow] = useState(false);
 
     const [select, setSelect] = useState("")
     const [sPage, setSPage] = useState(true)
@@ -24,7 +25,8 @@ export const GameContextprovider = ({ children }) => {
     const [showMyCard, setShowMyCard] = useState(false)
     const [houseColor, setHouseColor] = useState("")
     const [myColor, setmyColor] = useState("")
-
+    const [disableButton, setDisableButton] = useState(false)
+    const [final, setFinal] = useState()
 
     const playWinAudio = () => {
         new Audio(winGame).play();
@@ -38,9 +40,9 @@ export const GameContextprovider = ({ children }) => {
     const playTrueAudio = () => {
         new Audio(trueGame).play();
     }
-    // const playDrawAudio = () => {
-    //     new Audio(drawGame).play();
-    // }
+    const playDrawAudio = () => {
+        new Audio(drawGame).play();
+    }
 
 
     const handleClick = (e) => {
@@ -71,9 +73,7 @@ export const GameContextprovider = ({ children }) => {
         }
     }, [select])
 
-
     useEffect(() => {
-
         if (computerSelect === "lizard") {
             setHouseColor("#834FE3")
         } else if (computerSelect === "paper") {
@@ -90,64 +90,67 @@ export const GameContextprovider = ({ children }) => {
             setWin("YOU WİN")
             setTimeout(() => {
                 setCount(count + 1)
-                playTrueAudio()
+                playWinAudio()
             }, 2000);
         } else if (select === "paper" && computerSelect === "rock") {
             setWin("YOU WİN")
             setTimeout(() => {
                 setCount(count + 1)
-                playTrueAudio()
+                playWinAudio()
             }, 2000);
         } else if (select === "rock" && computerSelect === "lizard") {
             setWin("YOU WİN")
             setTimeout(() => {
                 setCount(count + 1)
-                playTrueAudio()
+                playWinAudio()
             }, 2000);
         } else if (select === "lizard" && computerSelect === "spock") {
             setWin("YOU WİN")
             setTimeout(() => {
                 setCount(count + 1)
-                playTrueAudio()
+                playWinAudio()
             }, 2000);
         } else if (select === "spock" && computerSelect === "scissors") {
             setWin("YOU WİN")
             setTimeout(() => {
                 setCount(count + 1)
-                playTrueAudio()
+                playWinAudio()
             }, 2000);
         } else if (select === "scissors" && computerSelect === "lizard") {
             setWin("YOU WİN")
             setTimeout(() => {
                 setCount(count + 1)
-                playTrueAudio()
+                playWinAudio()
             }, 2000);
         } else if (select === "paper" && computerSelect === "spock") {
             setWin("YOU WİN")
             setTimeout(() => {
                 setCount(count + 1)
-                playTrueAudio()
+                playWinAudio()
             }, 2000);
         } else if (select === "rock" && computerSelect === "scissors") {
             setWin("YOU WİN")
             setTimeout(() => {
                 setCount(count + 1)
-                playTrueAudio()
+                playWinAudio()
             }, 2000);
         } else if (select === "lizard" && computerSelect === "paper") {
             setWin("YOU WİN")
             setTimeout(() => {
                 setCount(count + 1)
-                playTrueAudio()
+                playWinAudio()
             }, 2000);
         } else if (select === "spock" && computerSelect === "rock") {
             setWin("YOU WİN")
             setTimeout(() => {
                 setCount(count + 1)
-                playTrueAudio()
+                playWinAudio()
             }, 2000);
         } else if (select === computerSelect) {
             setWin("DRAW")
+            setTimeout(() => {
+                playDrawAudio()
+            }, 2000);
         } else if (select !== "") {
             setWin("YOU LOSE")
             setTimeout(() => {
@@ -156,6 +159,18 @@ export const GameContextprovider = ({ children }) => {
             }, 2000);
         }
     }, [computerSelect, select])
+
+    useEffect(() => {
+        if (count === 10) {
+            setShow(true)
+            setDisableButton(true)
+            setFinal("WİN")
+        } else if (count === -10) {
+            setShow(true)
+            setDisableButton(true)
+            setFinal("LOSE")
+        }
+    }, [count])
 
     const playAgainClick = () => {
         setSelect("")
@@ -171,6 +186,13 @@ export const GameContextprovider = ({ children }) => {
     ]
 
     const data = {
+        setDisableButton,
+        final,
+        disableButton,
+        show,
+        setShow,
+        setCount,
+        setSPage,
         showMyCard,
         myColor,
         showImage,

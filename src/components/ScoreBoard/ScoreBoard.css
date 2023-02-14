@@ -9,8 +9,11 @@
     min-width: 400px;
 }
 
-.rock-paper>p {
-    font-size: 20px;
+.rock-paper>img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .score {
@@ -24,7 +27,7 @@
 }
 
 .score>p {
-    font-size: 16px;
+    font-size: 26px;
     font-weight: 600;
     color: #2A46C0;
 }
@@ -32,4 +35,5 @@
 .score>h1 {
     font-size: 60px;
     color: #3B4363;
+    margin-top: -10px;
 }

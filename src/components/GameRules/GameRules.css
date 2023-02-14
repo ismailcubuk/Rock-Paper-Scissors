@@ -6,4 +6,12 @@
     right: 5%;
     padding: 5px 25px 5px 25px;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.rule-header {
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 20px;
 }

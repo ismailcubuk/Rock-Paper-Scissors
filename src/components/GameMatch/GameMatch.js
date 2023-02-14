@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import './GameMatch.css';
 import GameContext from '../GameContext/GameContext';
 function GameMatch() {
-    const { playAgainClick, showMyCard, select, win, computerSelect, showImage, houseColor, myColor } = useContext(GameContext)
+    const { playAgainClick, showMyCard, select, win, computerSelect, showImage, houseColor, myColor, disableButton } = useContext(GameContext)
 
     return (
         <div className='gamematch-border'>
@@ -14,7 +14,7 @@ function GameMatch() {
             </div>
             <div className='match'>
                 {showImage ? <div className='win-lose'>{win}</div> : null}
-                {showImage ? <button className='play-again' onClick={playAgainClick}>PLAY AGAIN</button> : null}
+                {showImage ? <button className='play-again' disabled={disableButton} onClick={playAgainClick}>PLAY AGAIN</button> : null}
             </div>
             <div className='picks'>
                 <h4>THE HOUSE PICKED</h4>
@@ -25,5 +25,4 @@ function GameMatch() {
         </div>
     )
 }
-
 export default GameMatch
