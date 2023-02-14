@@ -2,15 +2,15 @@ import React, { useContext, useState } from 'react'
 import './GameMatch.css';
 import GameContext from '../GameContext/GameContext';
 function GameMatch() {
-    const { playAgainClick, select, win, computerSelect, showImage, houseColor, myColor } = useContext(GameContext)
+    const { playAgainClick, showMyCard, select, win, computerSelect, showImage, houseColor, myColor } = useContext(GameContext)
 
     return (
         <div className='gamematch-border'>
             <div className='picks'>
                 <h4>YOU PICKED</h4>
-                <div style={{ border: `20px solid ${myColor}` }}>
+                {showMyCard ? <div style={{ border: `20px solid ${myColor}` }}>
                     <img src={require(`../images/icon-${select}.svg`)} alt="" />
-                </div>
+                </div> : null}
             </div>
             <div className='match'>
                 {showImage ? <div className='win-lose'>{win}</div> : null}
