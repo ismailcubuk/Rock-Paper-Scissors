@@ -8,14 +8,11 @@ import loseGame from '../sounds/lose.mp3'
 import winGame from '../sounds/win.mp3';
 import pickGame from '../sounds/pick.mp3';
 import drawGame from '../sounds/draw.mp3';
-import trueGame from '../sounds/true.mp3';
-
 
 const GameContext = createContext()
 
 export const GameContextprovider = ({ children }) => {
     const [show, setShow] = useState(false);
-
     const [select, setSelect] = useState("")
     const [sPage, setSPage] = useState(true)
     const [win, setWin] = useState()
@@ -36,9 +33,6 @@ export const GameContextprovider = ({ children }) => {
     }
     const playPickAudio = () => {
         new Audio(pickGame).play();
-    }
-    const playTrueAudio = () => {
-        new Audio(trueGame).play();
     }
     const playDrawAudio = () => {
         new Audio(drawGame).play();
