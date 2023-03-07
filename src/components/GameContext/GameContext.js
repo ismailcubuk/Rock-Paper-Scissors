@@ -155,11 +155,11 @@ export const GameContextprovider = ({ children }) => {
     }, [computerSelect, select])
 
     useEffect(() => {
-        if (count === 10) {
+        if (count === 2) {
             setShow(true)
             setDisableButton(true)
             setFinal("WİN")
-        } else if (count === -10) {
+        } else if (count === -2) {
             setShow(true)
             setDisableButton(true)
             setFinal("LOSE")
