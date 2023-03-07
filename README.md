@@ -1,6 +1,6 @@
 <h1><strong>React App</strong></h1>
 
-<h1><a href="https://ismailcubuk.github.io/Rock-Paper-Scissors/">Rock Paper Scissors Game</a></h1>
+<h1>Click go to website => <a href="https://ismailcubuk.github.io/Rock-Paper-Scissors/">Rock Paper Scissors Game</a></h1>
 <p>Choose your option, then computer choose and match choosens</p>
 <p>If you win +1 point</p>
 <p>If you lose -1 point</p>
